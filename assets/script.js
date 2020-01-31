@@ -1,5 +1,6 @@
 lower = "abcdefghijklmnopqrstuvwxyz";
 upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+special = "!@#";
 charset = "";
 
 // Write password to the #password input
@@ -21,16 +22,24 @@ function writePassword() {
 function generatePassword() {
   var isUpperChecked = $("#upperCheck").is(':checked');
   var isLowerChecked = $("#lowerCheck").is(':checked');
+  var isSpecialChecked = $("#specialCheck").is(':checked');
   if(isUpperChecked) {
     charset = charset.concat(upper)
   }
   if(isLowerChecked) {
     charset = charset.concat(lower)
   }
-  //alert(charset);
+  if(isSpecialChecked) {
+    charset = charset.concat(special)
+  }
+  alert(charset);
   var result = "";
-	for (var i = 0; i < passwordLength.value; i++)
-		result += charset[Math.floor(Math.random() * charset.length)];
+	result = buildResult(result, charset);
 	return result;
-  
+}
+
+function buildResult(result, charset) {
+  for (var i = 0; i < passwordLength.value; i++)
+    result += charset[Math.floor(Math.random() * charset.length)];
+  return result;
 }
