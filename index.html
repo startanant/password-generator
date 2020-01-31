@@ -8,9 +8,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    
+    </script>
+
+    
+
   </head>
   <body>
-    <div class="wrapper">
+    <div class="container">
       <header>
         <h1>Password Generator</h1>
       </header>
@@ -26,16 +32,31 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+      <form>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="upperCheck" id="upperCheck">
+          <label class="form-check-label" for="upperCheck">
+            Upper Case
+          </label>
+          <input class="form-check-input" type="checkbox" value="lowerCheck" id="lowerCheck">
+          <label class="form-check-label" for="lowerCheck">
+            Lower Case
+          </label>
+          <input class="form-control" type="text" id="passwordLength" placeholder="Password length: Enter a number between 8-128">
+          <div class="card-footer">
+            <button id="generate" type="button" class="btn btn-primary" onclick="writePassword()">Generate Password</button>
+          </div>
         </div>
+      </form> 
       </div>
     </div>
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
